@@ -8,7 +8,7 @@ require "base64"
 
 Gem::Specification.new do |s|
   s.name = "multigiri"
-  s.version = Multigiri::VERSION
+  s.version = Rack::Multigiri::VERSION
   s.authors = ["Jakub Stastny aka Botanicus"]
   s.homepage = "http://github.com/botanicus/multigiri"
   s.summary = "" # TODO: summary
