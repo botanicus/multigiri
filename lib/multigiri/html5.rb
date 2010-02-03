@@ -1,8 +1,13 @@
 # encoding: utf-8
 
+# You might want to use some HTML 5 features right now, so your code is more readable & cleaner.
+
+# In future it can detect if the browser is capable to deal with given HTML 5 feature and
+# if yes, then there will be no transformation required. But then carefully with caching :)
 module Rack
   class Multigiri
     module HTML5
+      # Browsers supporting HTML 5 should can submit forms through PUT or DELETE natively.
       class Forms
         def initialize(app)
           @app = app
@@ -23,6 +28,7 @@ module Rack
         end
       end
 
+      # Elements can have attribute hidden.
       class Hidden
         def initialize(app)
           @app = app
