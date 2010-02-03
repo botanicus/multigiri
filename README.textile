@@ -2,6 +2,8 @@ h1. About
 
 h1. Usage
 
+Take a look at an "example":http://github.com/botanicus/multigiri/blob/master/examples/config.ru. The point is:
+
 <pre>
 use Multigiri do
   use HTML5::Forms
