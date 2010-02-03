@@ -1,0 +1,19 @@
+h1. About
+
+h1. Usage
+
+<pre>
+use Multigiri do
+  use HTML5::Forms
+  use HTML5::Hidden
+  use EmailObfuscator
+  use GoogleAnalytics, :my_tracking_code
+end
+</pre>
+
+h1. Links
+
+* "Source Code":http://github.com/botanicus/multigiri
+* "Wiki":http://wiki.github.com/botanicus/multigiri
+* "API Docs":http://rdoc.info/projects/botanicus/multigiri
+* "Bug reporting":http://github.com/botanicus/multigiri/issues
