@@ -3,12 +3,12 @@
 
 # Run ./multigiri.gemspec or gem build multigiri.gemspec
 # NOTE: we can't use require_relative because when we run gem build, it use eval for executing this file
-require File.join(File.dirname(__FILE__), "lib", "multigiri", "version")
+require File.expand_path("../lib/multigiri/version", __FILE__)
 require "base64"
 
 Gem::Specification.new do |s|
   s.name = "multigiri"
-  s.version = Rack::Multigiri::VERSION
+  s.version = Multigiri::VERSION
   s.authors = ["Jakub Stastny aka Botanicus"]
   s.homepage = "http://github.com/botanicus/multigiri"
   s.summary = "" # TODO: summary

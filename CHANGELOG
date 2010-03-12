@@ -1,2 +1,5 @@
 = Version 0.0.1
   * Initial import
+
+= Version 0.0.2
+  * Added link checker for checking if local links are valid
