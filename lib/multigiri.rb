@@ -30,7 +30,7 @@ class Multigiri
     # convert back to a [String]
     status, headers, document = @stack.call(env)
     body = document.to_html(indentation: 2) # TODO
-    headers["Content-Length"] = body.length.to_s
+    headers["Content-Length"] = body.bytesize.to_s
     [status, headers, [body]]
   end
 
