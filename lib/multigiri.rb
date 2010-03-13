@@ -11,8 +11,9 @@ require "nokogiri"
 
 # TODO: args for nokogiri, export format, indentation etc
 class Multigiri
-  def initialize(app, &block)
-    @app, @block = app, block
+  def initialize(app, options = Hash.new, &block)
+    @app, @options, @block = app, options, block
+    @options[:indentation] ||= 2
   end
 
   def call(env)
@@ -29,7 +30,7 @@ class Multigiri
 
     # convert back to a [String]
     status, headers, document = @stack.call(env)
-    body = document.to_html(indentation: 2) # TODO
+    body = document.to_html(indentation: options[:indentation]) # TODO
     headers["Content-Length"] = body.bytesize.to_s
     [status, headers, [body]]
   end

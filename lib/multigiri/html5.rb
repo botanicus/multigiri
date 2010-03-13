@@ -17,10 +17,10 @@ class Multigiri
         nodes = document.css("form[method=PUT]") + document.css("form[method=DELETE]")
         nodes.each do |form|
           input = Nokogiri::XML::Node.new("input", document)
-          input[:type] = "hidden"
-          input[:name] = "_method"
-          input[:value] = form[:method]
-          form[:method] = "POST"
+          input["type"] = "hidden"
+          input["name"] = "_method"
+          input["value"] = form["method"]
+          form["method"] = "POST"
           form.add_child(input)
         end
         [status, headers, document]
@@ -37,10 +37,10 @@ class Multigiri
         status, headers, document = @app.call(env)
         document.css("[hidden]").each do |element|
           element.remove_attribute("hidden")
-          if element[:style]
-            element[:style] += "; display: none"
+          if element["style"]
+            element["style"] += "; display: none"
           else
-            element[:style] = "display:none"
+            element["style"] = "display:none"
           end
         end
         [status, headers, document]

@@ -3,3 +3,4 @@
 
 = Version 0.0.2
   * Added link checker for checking if local links are valid
+  * Added middleware for setting default attributes for tags
