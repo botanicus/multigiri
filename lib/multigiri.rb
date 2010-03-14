@@ -11,6 +11,7 @@ require "nokogiri"
 
 # TODO: args for nokogiri, export format, indentation etc
 class Multigiri
+  attr_reader :options, :block
   def initialize(app, options = Hash.new, &block)
     @app, @options, @block = app, options, block
     @options[:indentation] ||= 2
