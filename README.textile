@@ -5,11 +5,21 @@ h1. Usage
 Take a look at an "example":http://github.com/botanicus/multigiri/blob/master/examples/config.ru. The point is:
 
 <pre>
-use Multigiri do
-  use HTML5::Forms
-  use HTML5::Hidden
-  use EmailObfuscator
-  use GoogleAnalytics, :my_tracking_code
+use Multigiri::HTML do
+  use Multigiri::HTML5::Forms
+  use Multigiri::HTML5::Hidden
+  use Multigiri::EmailObfuscator
+  use Multigiri::GoogleAnalytics, :my_tracking_code
+end
+
+# RSS / Atom feeds processing
+use Multigiri::XML, content_types: ["application/rss+xml", "application/atom+xml"] do
+  # TODO
+end
+
+# Generic XML processing
+use Multigiri::XML, content_types: [/\/xml$/] do
+  # TODO
 end
 </pre>
 
