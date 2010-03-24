@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Multigiri
+module Multigiri
   class DefaultAttributes
     def initialize(app, defaults = nil)
       @app, @defaults = app, defaults

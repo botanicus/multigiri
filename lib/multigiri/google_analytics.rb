@@ -7,7 +7,7 @@
 #     use GoogleAnalytics, :my_tracking_code if Rango.production?
 #   end
 
-class Multigiri
+module Multigiri
   class GoogleAnalytics
     attr_accessor :tracking_code
     def initialize(app, tracking_code)

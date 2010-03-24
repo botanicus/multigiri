@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Multigiri
+module Multigiri
   class EmailObfuscator
     def initialize(app)
       @app = app

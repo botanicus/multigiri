@@ -4,7 +4,7 @@
 
 # In future it can detect if the browser is capable to deal with given HTML 5 feature and
 # if yes, then there will be no transformation required. But then carefully with caching :)
-class Multigiri
+module Multigiri
   module HTML5
     # Browsers supporting HTML 5 should can submit forms through PUT or DELETE natively.
     class Forms

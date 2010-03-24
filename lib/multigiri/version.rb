@@ -1,5 +1,5 @@
 # encoding: utf-8
 
-class Multigiri
+module Multigiri
   VERSION = "0.0.4"
 end

@@ -8,7 +8,7 @@
 #       end
 #     end
 #   end
-class Multigiri
+module Multigiri
   class LinkChecker
     def initialize(app, logger, patterns = nil, &block)
       @app, @logger, @patterns = app, logger, patterns
