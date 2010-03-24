@@ -10,3 +10,8 @@
 
 = Version 0.0.4
   * Fixed NoMethodError in multigiri.rb
+
+= Version 0.0.5
+  * Nokogiri was divided into Nokogiri::HTML & Nokogiri::XML
+  * Added content_types option which can take an array of strings or regexps for matching if multigiri will run for current content type
+  * Improved performance
