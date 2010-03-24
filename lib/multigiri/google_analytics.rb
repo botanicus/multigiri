@@ -27,7 +27,7 @@ module Multigiri
 
     protected
     def script(body, content)
-      script = Nokogiri::XML::Node.new(:script, body.document)
+      script = Nokogiri::XML::Node.new("script", body.document)
       script.inner_html = content
       body.add_child(script)
     end

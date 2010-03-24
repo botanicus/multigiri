@@ -26,16 +26,16 @@ module Multigiri
 
     def call(env)
       status, headers, chunks = @app.call(env)
-      check_content_type
+      check_content_type(headers)
       if options[:content_types].empty? || options[:content_types].any? { |type| headers[CONTENT_TYPE].match(type) }
-        run(status, headers, chunks)
+        run(env, status, headers, chunks)
       else
         [status, headers, chunks]
       end
     end
 
     # convert to a Nokogiri document
-    def run(status, headers, chunks)
+    def run(env, status, headers, chunks)
       # the only what we know about body is that it has to respond to #each
       body = String.new
       chunks.each { |chunk| body += chunk }
@@ -58,19 +58,19 @@ module Multigiri
     end
 
     protected
-    def check_content_type
+    def check_content_type(headers)
       if headers[CONTENT_TYPE].nil? && !options[:content_types].empty?
         raise "Content-Type has to be set before you call multigiri, so multigiri can decide if it will parse the document or not!"
       end
     end
   end
 
-  class XML
+  class XML < HTML
     # XML has many MIME types, if you want to work with all posible XML MIME types, you can use
     # use Multigiri, mime_type: /xml/
     DEFAULT_TYPES = ["text/xml"]
 
-    def run(status, headers, chunks)
+    def run(env, status, headers, chunks)
       # the only what we know about body is that it has to respond to #each
       body = String.new
       chunks.each { |chunk| body += chunk }
